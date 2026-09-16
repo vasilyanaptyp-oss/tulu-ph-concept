@@ -1,6 +1,8 @@
 /* TULU PH — lukk seestpoolt: GSAP timeline + ScrollTrigger scrub.
    Ilma GSAP-ita, reduced-motion'iga või kui skript ei jõua 5 s jooksul — lukk on kohe avatud (CSS + märgistus).
-   Tihvtide asendid arvutatakse igal kaadril võtme asendist (võtme profiil), seega kerimine tagasi on täpne. */
+   Tihvtide asendid arvutatakse igal kaadril võtme asendist (võtme profiil), seega kerimine tagasi on täpne.
+   Tekstiga elemendid (pealdised, kontaktikaart) vahetuvad ilma opacity-hajutuseta: axe kerib scrub-lehte ise ja
+   tabaks poolläbipaistva teksti kontrastiveana. */
 (function () {
   'use strict';
   var d = document.documentElement;
@@ -51,7 +53,7 @@
   gsap.set('#secPlug', { opacity: 1 });
   gsap.set('#shear', { strokeDashoffset: 600 });
   gsap.set('#door', { rotateY: 0, transformOrigin: 'left center', transformPerspective: 1400 });
-  gsap.set('#opened', { autoAlpha: 0, y: 14 });
+  gsap.set('#opened', { autoAlpha: 0, y: 18 });
   gsap.set('#cap1', { autoAlpha: 1 });
   gsap.set(['#cap2', '#cap3', '#cap4'], { autoAlpha: 0 });
   place();
@@ -65,19 +67,23 @@
   });
   tl.to(st, { tx: 0, duration: 4, onUpdate: place }, 0)
     .to('#bowF', { autoAlpha: 1, scale: 1, duration: 3.2, ease: 'power1.out' }, .4)
-    .to('#cap1', { autoAlpha: 0, duration: .3 }, 3.5)
-    .to('#cap2', { autoAlpha: 1, duration: .3 }, 3.7)
+    .set('#cap1', { autoAlpha: 0 }, 3.6)
+    .set('#cap2', { autoAlpha: 1 }, 3.6)
+    .fromTo('#cap2', { y: 10 }, { y: 0, duration: .35, ease: 'power1.out' }, 3.6)
     .to('#shear', { strokeDashoffset: 0, duration: .9, ease: 'power1.inOut' }, 4.0)
-    .to('#cap2', { autoAlpha: 0, duration: .3 }, 5.0)
-    .to('#cap3', { autoAlpha: 1, duration: .3 }, 5.2)
+    .set('#cap2', { autoAlpha: 0 }, 5.1)
+    .set('#cap3', { autoAlpha: 1 }, 5.1)
+    .fromTo('#cap3', { y: 10 }, { y: 0, duration: .35, ease: 'power1.out' }, 5.1)
     .to('#plug', { rotation: 90, duration: 1.6, ease: 'power1.inOut' }, 5.1)
     .to('#cam', { rotation: 90, duration: 1.6, ease: 'power1.inOut' }, 5.1)
     .to('#bolt', { x: -46, duration: 1.2, ease: 'power1.inOut' }, 5.5)
     .to('#secPlug', { opacity: .55, duration: 1.2 }, 5.1)
-    .to('#cap3', { autoAlpha: 0, duration: .3 }, 6.9)
-    .to('#cap4', { autoAlpha: 1, duration: .3 }, 7.1)
+    .set('#cap3', { autoAlpha: 0 }, 7.0)
+    .set('#cap4', { autoAlpha: 1 }, 7.0)
+    .fromTo('#cap4', { y: 10 }, { y: 0, duration: .35, ease: 'power1.out' }, 7.0)
     .to('#door', { rotateY: -108, duration: 2.1, ease: 'power2.inOut' }, 7.0)
-    .to('#opened', { autoAlpha: 1, y: 0, duration: 1.1, ease: 'power1.out' }, 7.7)
+    .set('#opened', { autoAlpha: 1 }, 7.6)
+    .to('#opened', { y: 0, duration: 1.1, ease: 'power2.out' }, 7.6)
     .to({}, { duration: 1.4 });
 
   window.TP_TL = tl;
