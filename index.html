@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="et">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>TULU PH OÜ — 24h lukuabi Tartus ja Lõuna-Eestis</title>
+<meta name="description" content="24h lukuabi Tartus ja Lõuna-Eestis: lukkude avamine, autouste avamine, lukkude paigaldus, võtmete valmistamine, koodlukud ja fonolukud. Pood Eedeni keskuses. Tel 507 2795.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="et_EE">
+<meta property="og:title" content="Kontseptsioon: TULU PH OÜ — 24h lukuabi">
+<meta property="og:description" content="Kontseptsioon — mitteametlik koduleht. Tartu ja Lõuna-Eesti.">
+<meta property="og:url" content="https://vasilyanaptyp-oss.github.io/tulu-ph-concept/">
+<meta property="og:image" content="https://vasilyanaptyp-oss.github.io/tulu-ph-concept/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="theme-color" content="#FF5A1F" id="themeColor">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/unbounded-500-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/instrument-sans-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script>
+/* Öörežiim kella järgi (22–7) enne esimest joonistust; ?h=23 või ?theme=night|day katsetamiseks.
+   Liikumine ainult siis, kui see on lubatud: ilma JS-ita ja reduced-motion'iga on lukk kohe avatud. */
+(function () {
+  var d = document.documentElement, c = ['js'];
+  var p = new URLSearchParams(location.search), h = p.get('h'), t = p.get('theme');
+  var hour = (h !== null && h !== '' && !isNaN(h)) ? +h : new Date().getHours();
+  var night = t === 'night' ? true : t === 'day' ? false : (hour >= 22 || hour < 7);
+  if (night) c.push('night');
+  var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!rm && !(navigator.connection && navigator.connection.saveData)) c.push('scene-scrub');
+  d.className = c.join(' ');
+  window.TP_FALLBACK = setTimeout(function () {
+    if (window.TP_TL) return;
+    d.classList.remove('scene-scrub'); d.classList.add('scene-done');
+  }, 5000);
+})();
+</script>
+<style>
+@font-face{font-family:"Unbounded";font-style:normal;font-weight:500 900;font-display:swap;src:url(fonts/unbounded-500-900-latin-ext.woff2) format("woff2");unicode-range:U+0100-017F,U+2113}
+@font-face{font-family:"Unbounded";font-style:normal;font-weight:500 900;font-display:swap;src:url(fonts/unbounded-500-900-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Instrument Sans";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/instrument-sans-400-700-latin-ext.woff2) format("woff2");unicode-range:U+0100-017F,U+2113}
+@font-face{font-family:"Instrument Sans";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/instrument-sans-400-700-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Unbounded Fallback";src:local("Arial Black"),local("Arial-Black");size-adjust:115%}
+@font-face{font-family:"Instrument Sans Fallback";src:local("Arial"),local("ArialMT");size-adjust:100.4%}
+
+:root{
+  --bg:#FAFAF7; --bg-2:#F1F0EB; --ink:#141311; --ink-2:#4B4A45; --line:#1E1C19; --rule:#DAD7CF;
+  --sig:#FF5A1F; --sig-deep:#D4420C; --sig-soft:#FFD9C8;
+  --hero-bg:#FF5A1F; --hero-ink:#141311; --hero-ink-2:#3A1A0E; --hero-rule:rgba(20,19,17,.28);
+  --btn:#141311; --btn-ink:#FFFFFF;
+  --panel:#FFFFFF; --metal:#ECEAE3; --metal-2:#D6D3CA; --key:#FF5A1F; --keyhole:#FAFAF7;
+  --disp:"Unbounded","Unbounded Fallback","Arial Black",Arial,sans-serif;
+  --text:"Instrument Sans","Instrument Sans Fallback",Arial,sans-serif;
+  --pad:clamp(16px,4vw,56px); --max:1240px; --ease:cubic-bezier(.22,.8,.24,1);
+  --barh:0px;
+  color-scheme:light;
+}
+html.night{
+  --bg:#0B0F17; --bg-2:#10151F; --ink:#F2F0E9; --ink-2:#B1B5C0; --line:#EDEBE4; --rule:#273042;
+  --sig:#FF5A1F; --sig-deep:#FF7A48; --sig-soft:#3A1F14;
+  --hero-bg:#0B0F17; --hero-ink:#F2F0E9; --hero-ink-2:#C9CCD5; --hero-rule:rgba(242,240,233,.22);
+  --btn:#FF5A1F; --btn-ink:#141311;
+  --panel:#151B27; --metal:#1A2130; --metal-2:#2A3346; --key:#FF5A1F; --keyhole:#0B0F17;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:var(--bg)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.125rem/1.5 var(--text);-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,svg{display:block}
+[hidden]{display:none!important}
+h1,h2,h3{margin:0;font-family:var(--disp);font-weight:700;line-height:1.05;overflow-wrap:anywhere}
+p{margin:0 0 .9em}
+a{color:inherit}
+::selection{background:var(--sig);color:#141311}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:3px}
+.sr{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-80px;z-index:90;display:inline-flex;align-items:center;min-height:44px;padding:0 16px;background:var(--ink);color:var(--bg);font:700 1rem/1 var(--disp);text-decoration:none}
+.skip:focus{top:12px}
+.defs{position:absolute;width:0;height:0;overflow:hidden}
+.ico{width:22px;height:22px;flex:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.kicker{font:600 .8125rem/1.2 var(--text);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.h2{font-size:clamp(1.75rem,4.2vw,3rem);letter-spacing:-.01em}
+.sub{max-width:52ch;color:var(--ink-2);font-size:1.0625rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:0 24px;border-radius:14px;background:var(--btn);color:var(--btn-ink);font:700 1.125rem/1 var(--disp);text-decoration:none;border:0;cursor:pointer}
+.btn .ico{width:24px;height:24px}
+.btn-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+
+/* ---------- esimene ekraan ---------- */
+.hero{position:relative;min-height:100svh;display:grid;grid-template-rows:auto 1fr auto;background:var(--hero-bg);color:var(--hero-ink);overflow:hidden}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px var(--pad) 0;position:relative;z-index:2}
+.brand{display:flex;flex-direction:column;gap:2px;text-decoration:none;min-height:44px;justify-content:center}
+.brand b{font:700 .9375rem/1.1 var(--disp);letter-spacing:.02em;white-space:nowrap}
+.brand span{font:500 .8125rem/1.2 var(--text);color:var(--hero-ink-2)}
+.status{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 14px 0 12px;border-radius:999px;border:1.5px solid var(--hero-rule);font:600 .875rem/1 var(--text);white-space:nowrap}
+.status .dot{width:10px;height:10px;border-radius:50%;background:var(--hero-ink);flex:none}
+html.night .status .dot{background:var(--sig);box-shadow:0 0 0 4px rgba(255,90,31,.25)}
+html.night .status{border-color:rgba(255,90,31,.5)}
+.status .t-day{display:inline}.status .t-night{display:none}
+html.night .status .t-day{display:none}html.night .status .t-night{display:inline}
+.status time{color:var(--hero-ink-2);font-weight:500}
+.mode{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--hero-rule);background:transparent;color:inherit;cursor:pointer;padding:0}
+.mode .i-sun{display:none}.mode .i-moon{display:block}
+html.night .mode .i-sun{display:block}html.night .mode .i-moon{display:none}
+.hero-main{position:relative;z-index:2;padding:clamp(18px,4vh,48px) var(--pad) 0;display:grid;align-content:center;gap:clamp(8px,1.6vh,18px)}
+.h1-a{display:block;font:600 clamp(1.125rem,2.6vw,1.5rem)/1.2 var(--disp);letter-spacing:.01em;margin-bottom:.15em}
+.h1-24{display:block;white-space:nowrap;font-size:clamp(5.5rem,19vw,13.5rem);font-weight:900;line-height:.86;letter-spacing:-.04em;margin-left:-.04em}
+.h1-b{display:block;font-size:clamp(1.75rem,5.6vw,3.5rem);font-weight:700;line-height:1.05;letter-spacing:-.01em;margin-top:.12em;max-width:14ch}
+.lead{max-width:40ch;font-size:clamp(1rem,2.2vw,1.25rem);color:var(--hero-ink-2);margin:0}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:6px}
+.call{display:inline-flex;align-items:center;gap:14px;min-height:64px;padding:0 26px 0 22px;border-radius:18px;background:var(--btn);color:var(--btn-ink);font:700 clamp(1.25rem,3.4vw,1.75rem)/1 var(--disp);letter-spacing:-.01em;text-decoration:none;box-shadow:0 14px 34px -14px rgba(20,19,17,.55)}
+.call .ico{width:28px;height:28px}
+.call .cc{font-size:.62em;font-weight:600;opacity:.75;letter-spacing:0;align-self:flex-end;padding-bottom:.12em}
+html.night .call{box-shadow:0 0 0 1px rgba(255,90,31,.35),0 18px 44px -10px rgba(255,90,31,.55)}
+.alt{font-size:1rem;color:var(--hero-ink-2)}
+.alt a{display:inline-flex;align-items:center;min-height:44px;color:var(--hero-ink);font-weight:600;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
+.night-line{display:none;font:600 1rem/1.3 var(--text);color:var(--sig)}
+html.night .night-line{display:block}
+.facts{position:relative;z-index:2;display:grid;gap:10px 28px;padding:clamp(14px,3vh,26px) var(--pad) clamp(16px,3vh,28px);border-top:1.5px solid var(--hero-rule);font:600 .9375rem/1.3 var(--text)}
+.facts li{list-style:none;display:flex;align-items:center;gap:10px}
+.facts ul{margin:0;padding:0;display:contents}
+.facts .ico{width:20px;height:20px;opacity:.85}
+.keyhole{position:absolute;z-index:1;right:calc(var(--pad) - 20px);top:50%;width:clamp(200px,26vw,380px);transform:translateY(-52%);color:var(--hero-ink);opacity:.55;pointer-events:none;display:none}
+html.night .keyhole{opacity:.7;filter:drop-shadow(0 0 28px rgba(255,90,31,.35))}
+@media (min-width:1024px){
+  .hero{grid-template-columns:1fr;}
+  .hero-main{grid-template-columns:minmax(0,1fr) clamp(220px,28vw,420px);align-items:center;column-gap:40px}
+  .hero-main > *{grid-column:1}
+  .keyhole{display:block}
+  .facts{grid-template-columns:repeat(3,auto);justify-content:start}
+}
+@media (max-width:1023px){.facts{grid-template-columns:1fr}}
+@media (min-width:560px) and (max-width:1023px){.facts{grid-template-columns:repeat(2,auto)}}
+@media (max-width:420px){.top{padding-top:10px}.status time{display:none}html.night .brand span{display:none}}
+
+/* ---------- lukk seestpoolt ---------- */
+.lock{background:var(--bg);color:var(--ink)}
+.lock-head{padding:clamp(40px,7vh,72px) 0 clamp(14px,2.5vh,24px)}
+.stage{position:relative;min-height:calc(100svh - var(--barh));display:grid;align-content:start;gap:16px;padding:8px 0 calc(24px + var(--barh))}
+.stage-grid{display:grid;gap:18px 28px;align-items:start}
+.draw{color:var(--line)}
+.view{position:relative;background:var(--panel);border:1.5px solid var(--rule);border-radius:16px;padding:10px}
+.view svg{width:100%;height:auto}
+.view .tag{position:absolute;left:14px;top:10px;font:600 .75rem/1 var(--text);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.v-front{aspect-ratio:1}
+.v-front svg{width:100%;height:100%}
+.caps{position:relative;min-height:6.5em}
+.cap{position:absolute;inset:0;display:grid;gap:4px;align-content:start}
+.cap .n{font:700 .8125rem/1 var(--disp);color:var(--sig);letter-spacing:.06em}
+.cap h3{font-size:clamp(1.0625rem,2vw,1.375rem);line-height:1.15}
+.cap p{margin:0;color:var(--ink-2);font-size:.9375rem;line-height:1.4;max-width:34ch}
+html.scene-scrub .cap:not(.cap-1){opacity:0;visibility:hidden}
+html:not(.scene-scrub) .cap:not(.cap-4){display:none}
+html:not(.scene-scrub) .caps{min-height:0}
+html:not(.scene-scrub) .cap{position:static}
+.doorbox{position:relative;perspective:1400px;aspect-ratio:3/4;max-height:420px;margin:0 auto;width:100%;border:8px solid var(--metal-2);border-radius:18px;background:var(--bg-2)}
+.door{position:absolute;inset:0;transform-origin:left center;background:var(--metal);border-radius:10px;box-shadow:inset 0 0 0 1.5px var(--rule);backface-visibility:hidden;z-index:2}
+.door::before,.door::after{content:"";position:absolute;left:20%;right:20%;height:34%;border:1.5px solid var(--rule);border-radius:6px;box-shadow:inset 2px 2px 0 rgba(0,0,0,.05)}
+.door::before{top:9%}
+.door::after{top:55%}
+.door .handle{position:absolute;right:5%;top:50%;width:12%;height:8px;border-radius:4px;background:var(--ink);transform:translateY(-4px)}
+.door .cyl{position:absolute;right:calc(5% + 6%);top:calc(50% + 20px);width:18px;height:28px;border-radius:9px 9px 6px 6px;background:var(--panel);border:1.5px solid var(--ink);transform:translateX(50%)}
+.door .cyl::after{content:"";position:absolute;left:50%;top:5px;width:2px;height:12px;background:var(--ink);transform:translateX(-50%)}
+.door .plate{font:600 .6875rem/1 var(--text);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);position:absolute;left:50%;top:2.5%;transform:translateX(-50%);white-space:nowrap}
+.stage .stage-grid{width:100%}
+html:not(.scene-scrub) .door{transform:rotateY(-105deg)}
+.opened{position:absolute;inset:0;display:grid;align-content:center;gap:12px;padding:22px 20px;background:var(--panel);border:1.5px solid var(--sig);border-radius:14px;z-index:1}
+.opened .kicker{color:var(--sig)}
+.opened h3{font-size:clamp(1.5rem,3vw,2rem)}
+.opened .call{min-height:56px;padding:0 18px;font-size:1.25rem;border-radius:14px;box-shadow:none}
+.opened .call .ico{width:24px;height:24px}
+.opened .row{display:grid;gap:4px;font-size:.9375rem;color:var(--ink-2)}
+.opened .row a{display:inline-flex;align-items:center;min-height:44px;color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+html.scene-scrub .stage:not(.ready) .stage-grid{visibility:hidden}
+@media (max-width:719px){
+  .stage-grid{grid-template-columns:1fr;}
+  .v-sec{grid-row:1}
+  .m-row{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:start}
+  .v-front{width:96px;padding:6px}
+  .v-front .tag{display:none}
+  .caps{min-height:7.5em}
+  .doorbox{max-height:min(46svh,360px);aspect-ratio:auto;height:clamp(220px,40svh,360px)}
+}
+@media (min-width:720px) and (max-width:1023px){
+  .stage-grid{grid-template-columns:1fr 280px}
+  .v-sec{grid-column:1/-1}
+  .m-row{display:grid;grid-template-columns:200px 1fr;gap:20px;align-items:start}
+  .v-front{width:200px}
+}
+@media (min-width:1024px){
+  .stage{align-content:center}
+  .stage-grid{grid-template-columns:minmax(0,1fr) 300px;grid-template-rows:auto auto;gap:20px 36px;align-items:start}
+  .v-sec{grid-column:1;grid-row:1}
+  .m-row{grid-column:1;grid-row:2;display:grid;grid-template-columns:200px minmax(0,1fr);gap:26px;align-items:start}
+  .v-front{width:200px}
+  .doorbox{grid-column:2;grid-row:1/3;align-self:center;max-height:none;height:min(100%,460px);aspect-ratio:auto}
+  .caps{min-height:8em;padding-top:6px}
+}
+.sec-fill{fill:var(--metal)}
+.plug-fill{fill:var(--metal-2)}
+.pin{fill:var(--metal-2);stroke:currentColor;stroke-width:1.5}
+.dpin{fill:var(--panel);stroke:currentColor;stroke-width:1.5}
+.keyf{fill:var(--key)}
+.hole{fill:var(--keyhole)}
+.lbl{font:600 11px/1 var(--text);letter-spacing:.1em;text-transform:uppercase;fill:var(--ink-2)}
+.lbl-sig{fill:var(--sig)}
+#shear{stroke:var(--sig);stroke-dasharray:600;stroke-dashoffset:0}
+html.scene-scrub #shear{stroke-dashoffset:600}
+.hint{display:flex;align-items:center;gap:8px;font:600 .875rem/1 var(--text);color:var(--ink-2)}
+html:not(.scene-scrub) .hint{display:none}
+
+/* ---------- teenused: detailide loend ---------- */
+.services{padding:clamp(56px,9vh,104px) 0 clamp(40px,7vh,72px);background:var(--bg-2)}
+.list{margin:26px 0 0;padding:0;list-style:none;border-top:1.5px solid var(--line)}
+.list li{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;padding:22px 0;border-bottom:1.5px solid var(--rule);align-items:start}
+.list .n{font:700 clamp(1.5rem,3vw,2.25rem)/1 var(--disp);color:var(--sig);letter-spacing:-.02em;min-width:2.2ch}
+.list h3{font-size:clamp(1.25rem,2.4vw,1.75rem);display:flex;align-items:center;gap:12px}
+.list h3 .ico{width:26px;height:26px;color:var(--ink-2)}
+.list p{margin:0;color:var(--ink-2);max-width:60ch}
+.list .body{display:grid;gap:8px}
+@media (min-width:860px){
+  .list li{grid-template-columns:3.4ch minmax(0,1fr) minmax(0,1.3fr);gap:24px;align-items:baseline}
+  .list .body{display:contents}
+}
+.list-foot{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;font-size:1rem;color:var(--ink-2)}
+
+/* ---------- kuidas käib ---------- */
+.steps{padding:clamp(56px,9vh,104px) 0}
+.steps ol{margin:30px 0 0;padding:0;list-style:none;display:grid;gap:18px;counter-reset:s}
+.steps li{position:relative;display:grid;gap:8px;padding:22px 22px 22px;border:1.5px solid var(--rule);border-radius:16px;background:var(--panel)}
+.steps li::before{counter-increment:s;content:"0" counter(s);font:700 .8125rem/1 var(--disp);color:var(--sig);letter-spacing:.06em}
+.steps h3{font-size:clamp(1.125rem,2vw,1.5rem)}
+.steps p{margin:0;color:var(--ink-2);font-size:1rem}
+@media (min-width:760px){.steps ol{grid-template-columns:repeat(3,1fr)}}
+
+/* ---------- pood ---------- */
+.shop{padding:0 0 clamp(56px,9vh,104px)}
+.shop-card{display:grid;gap:22px;padding:clamp(22px,4vw,40px);border-radius:20px;background:var(--sig);color:#141311}
+.shop-card .kicker{color:#3A1A0E}
+.shop-card h2{font-size:clamp(1.5rem,3.4vw,2.5rem)}
+.shop-card p{margin:0;max-width:52ch;color:#3A1A0E}
+.shop-card .addr{font:700 clamp(1.125rem,2.4vw,1.5rem)/1.3 var(--disp);color:#141311}
+.shop-card .btn{background:#141311;color:#fff}
+.shop-card a:focus-visible{outline-color:#141311}
+@media (min-width:860px){.shop-card{grid-template-columns:1.2fr 1fr;align-items:end}}
+
+/* ---------- kontakt ja jalus ---------- */
+.contact{padding:clamp(56px,9vh,104px) 0 40px;border-top:1.5px solid var(--rule)}
+.contact-grid{display:grid;gap:26px 40px}
+.contact .big{font:800 clamp(2rem,7vw,4.5rem)/1 var(--disp);letter-spacing:-.03em;text-decoration:none;display:inline-flex;align-items:center;gap:.25em;min-height:44px;overflow-wrap:anywhere}
+.contact .big small{font-size:.42em;font-weight:600;color:var(--ink-2);align-self:flex-end;padding-bottom:.18em}
+.contact dl{margin:0;display:grid;gap:14px 20px;grid-template-columns:auto 1fr;font-size:1rem}
+.contact dt{font:600 .8125rem/1.6 var(--text);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.contact dd{margin:0}
+.contact dd a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:3px}
+@media (min-width:860px){.contact-grid{grid-template-columns:1.2fr 1fr;align-items:start}}
+footer{padding:22px 0 calc(26px + var(--barh));border-top:1.5px solid var(--rule);font-size:.875rem;color:var(--ink-2)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-between}
+footer b{color:var(--ink);font-weight:600}
+
+/* ---------- kiire helistamise riba ---------- */
+.callbar{position:fixed;z-index:60;left:0;right:0;bottom:0;padding:0 0 env(safe-area-inset-bottom);background:var(--bg);border-top:1.5px solid var(--rule);transform:translateY(110%);transition:transform .3s var(--ease),visibility 0s linear .3s;visibility:hidden}
+.callbar.show{transform:none;visibility:visible;transition:transform .3s var(--ease),visibility 0s}
+.callbar a{display:flex;align-items:center;justify-content:center;gap:10px;min-height:60px;margin:8px var(--pad);border-radius:14px;background:var(--btn);color:var(--btn-ink);font:700 1.125rem/1 var(--disp);text-decoration:none}
+@media (min-width:1024px){
+  .callbar{left:auto;right:24px;bottom:auto;top:14px;border:0;background:none;padding:0;transform:translateY(-140%)}
+  .callbar a{margin:0;min-height:48px;padding:0 18px;box-shadow:0 8px 24px -10px rgba(0,0,0,.5)}
+}
+@media (prefers-reduced-motion:reduce){.callbar{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#teenused">Otse sisu juurde</a>
+
+<svg class="defs" aria-hidden="true" focusable="false">
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect width="20" height="16" x="2" y="4" rx="2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5m8.774-10.69a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"/><path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"/></symbol>
+  <symbol id="i-house" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></symbol>
+  <symbol id="i-keypad" viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-width="32" stroke-miterlimit="10"><circle cx="256" cy="448" r="32"/><circle cx="256" cy="320" r="32"/><circle cx="256" cy="192" r="32"/><circle cx="256" cy="64" r="32"/><circle cx="384" cy="320" r="32"/><circle cx="384" cy="192" r="32"/><circle cx="384" cy="64" r="32"/><circle cx="128" cy="320" r="32"/><circle cx="128" cy="192" r="32"/><circle cx="128" cy="64" r="32"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m7-7-7 7-7-7"/></symbol>
+</svg>
+
+<header class="hero" id="algus">
+  <div class="top">
+    <a class="brand" href="#algus" aria-label="TULU PH OÜ, algusesse"><b>TULU PH OÜ</b><span>Tartu luku- ja võtmemeister</span></a>
+    <div style="display:flex;gap:8px;align-items:center">
+      <p class="status" style="margin:0"><span class="dot" aria-hidden="true"></span><span class="t-day">Avatud 24h</span><span class="t-night">Töötame ka praegu</span><time id="clock" hidden></time></p>
+      <button class="mode" type="button" id="modeBtn" aria-pressed="false" aria-label="Öövaade sisse või välja"><svg class="ico i-moon" aria-hidden="true"><use href="#i-moon"/></svg><svg class="ico i-sun" aria-hidden="true"><use href="#i-sun"/></svg></button>
+    </div>
+  </div>
+
+  <div class="hero-main">
+    <h1><span class="h1-a">Uks ei avane?</span><span class="h1-24">24h</span><span class="h1-b">lukuabi Tartus ja Lõuna-Eestis</span></h1>
+    <p class="lead">Kodud, kontorid ja autod. Helista — ka öösel, nädalavahetusel ja pühade ajal.</p>
+    <p class="night-line" id="nightLine">Praegu on öö. Sama number töötab ka nüüd.</p>
+    <div class="cta">
+      <a class="call" id="heroCall" href="tel:+3725072795"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span><span class="cc">+372</span> 507 2795</span></a>
+      <p class="alt" style="margin:0">või kirjuta <a href="mailto:tuluph@gmail.com">tuluph@gmail.com</a></p>
+    </div>
+    <svg class="keyhole" viewBox="0 0 300 380" aria-hidden="true" focusable="false">
+      <g fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M150 20a95 95 0 0 1 36 183v141a36 36 0 0 1-72 0V203A95 95 0 0 1 150 20Z"/>
+        <circle cx="150" cy="115" r="58"/>
+        <path d="M150 62v106" stroke-width="10" stroke-linecap="round"/>
+        <path d="M143 84h14M143 100h14M143 132h14M143 148h14" stroke-width="3"/>
+        <path d="M20 115h56M224 115h56" stroke-dasharray="6 5"/>
+        <path d="M150 20V4M150 344v24" stroke-dasharray="6 5"/>
+        <path d="M282 60v110M275 60h14M275 170h14" opacity=".7"/>
+        <path d="M10 210h280" stroke-dasharray="2 5" opacity=".7"/>
+        <path d="M0 205l10 5-10 5zM300 205l-10 5 10 5z" fill="currentColor" stroke="none" opacity=".7"/>
+      </g>
+      <text x="8" y="196" class="lbl" fill="currentColor" style="font:600 12px/1 var(--text);letter-spacing:.12em">A</text>
+      <text x="282" y="196" class="lbl" fill="currentColor" style="font:600 12px/1 var(--text);letter-spacing:.12em">A</text>
+    </svg>
+  </div>
+
+  <div class="facts">
+    <ul>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg>Tegutsenud 1995. aastast</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-store"/></svg>Pood Eedeni keskuses, Tartu</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Lukuabi kogu Lõuna-Eestis</li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+<!-- ======= lukk seestpoolt ======= -->
+<section class="lock" id="lockSection" aria-labelledby="lockH">
+  <div class="wrap lock-head">
+    <p class="kicker">Nii see käib</p>
+    <h2 class="h2" id="lockH">Lukk seestpoolt</h2>
+    <p class="sub">Silinderluku lõige: võti läheb sisse, tihvtid joonduvad, südamik pöörab — ja uks on lahti.</p>
+    <p class="hint"><svg class="ico" aria-hidden="true"><use href="#i-down"/></svg>Keri edasi — joonis liigub kerimisega</p>
+  </div>
+  <div class="stage" id="stage">
+    <div class="wrap stage-grid">
+      <div class="m-row">
+        <div class="view v-front">
+          <span class="tag">Vaade A</span>
+          <svg id="frontView" class="draw" viewBox="0 0 300 300" role="img" aria-label="Silinderluku otsavaade: südamik ja võtmeava pööravad koos võtmega">
+            <g fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M150 28a92 92 0 0 1 34 177v52a34 34 0 0 1-68 0v-52A92 92 0 0 1 150 28Z" class="sec-fill"/>
+              <path d="M40 120h48M212 120h48" stroke-dasharray="5 4" opacity=".6"/>
+              <path d="M150 12v16M150 275v14" stroke-dasharray="5 4" opacity=".6"/>
+            </g>
+            <g id="plug">
+              <circle cx="150" cy="120" r="56" class="plug-fill" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M144 72h12v40l6 4-6 4v46h-12v-30l-6-4 6-4V72z" class="hole" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <g id="bowF">
+                <path d="M150 104c-22 0-36 12-36 30 0 16 12 26 26 32v14h20v-14c14-6 26-16 26-32 0-18-14-30-36-30z" class="keyf" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <circle cx="150" cy="132" r="7" class="hole" stroke="currentColor" stroke-width="1.5"/>
+              </g>
+            </g>
+            <g fill="none" stroke="currentColor" stroke-width="1.5" opacity=".75">
+              <path d="M18 246h264" stroke-dasharray="2 5"/>
+              <path d="M8 241l10 5-10 5zM292 241l-10 5 10 5z" fill="currentColor" stroke="none"/>
+            </g>
+            <text x="14" y="236" class="lbl">A</text>
+            <text x="274" y="236" class="lbl">A</text>
+          </svg>
+        </div>
+        <div class="caps" aria-live="off">
+          <div class="cap cap-1" id="cap1"><span class="n">01 / 04</span><h3>Võti läheb võtmeavasse</h3><p>Võtme hambad tõstavad iga tihvti täpselt oma kõrgusele.</p></div>
+          <div class="cap cap-2" id="cap2"><span class="n">02 / 04</span><h3>Tihvtid joonduvad lõikejoonel</h3><p>Kui iga tihvti serv on täpselt südamiku serval, ei takista miski pöörlemist.</p></div>
+          <div class="cap cap-3" id="cap3"><span class="n">03 / 04</span><h3>Südamik pöörab</h3><p>Südamik pöörab koos võtmega ja nukk tõmbab riivi tagasi.</p></div>
+          <div class="cap cap-4" id="cap4"><span class="n">04 / 04</span><h3>Uks on lahti</h3><p>Nii avame ka teie ukse — või vahetame luku, kui võti on kadunud.</p></div>
+        </div>
+      </div>
+
+      <div class="view v-sec">
+        <span class="tag">Lõige A–A</span>
+        <svg id="secView" class="draw" viewBox="0 0 820 300" role="img" aria-label="Silinderluku pikilõige: võti, viis tihvtipaari vedrudega, lõikejoon, nukk ja riiv">
+          <defs>
+            <pattern id="hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="9" stroke="currentColor" stroke-width="1" opacity=".28"/></pattern>
+            <pattern id="hatch2" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line x1="0" y1="0" x2="0" y2="9" stroke="currentColor" stroke-width="1" opacity=".28"/></pattern>
+            <clipPath id="clipKey"><rect x="300" y="150" width="440" height="110"/></clipPath>
+          </defs>
+          <!-- korpus -->
+          <rect x="300" y="40" width="440" height="110" rx="8" class="sec-fill" stroke="currentColor" stroke-width="1.5"/>
+          <rect x="300" y="40" width="440" height="110" rx="8" fill="url(#hatch)"/>
+          <!-- südamik -->
+          <g id="secPlug">
+            <rect x="300" y="150" width="440" height="110" rx="8" class="plug-fill" stroke="currentColor" stroke-width="1.5"/>
+            <rect x="300" y="150" width="440" height="110" rx="8" fill="url(#hatch2)"/>
+          </g>
+          <!-- võtmeava -->
+          <rect x="300" y="180" width="340" height="42" class="hole" stroke="currentColor" stroke-width="1.5"/>
+          <!-- tihvtikambrid -->
+          <g class="hole" stroke="currentColor" stroke-width="1.5">
+            <rect x="339" y="58" width="22" height="122"/><rect x="399" y="58" width="22" height="122"/><rect x="459" y="58" width="22" height="122"/><rect x="519" y="58" width="22" height="122"/><rect x="579" y="58" width="22" height="122"/>
+          </g>
+          <!-- võti (lõppasend: sees) -->
+          <g id="key" transform="translate(0,0)">
+            <g clip-path="url(#clipKey)">
+              <path class="keyf" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" d="M300 184H342L350 192L358 184H386L410 208L434 184H514L530 200L546 184H584L590 190L596 184H618L640 214V218H300Z"/>
+              <path d="M304 206H632" stroke="currentColor" stroke-width="1" opacity=".45"/>
+            </g>
+            <!-- võtmepea väljaspool korpust -->
+            <path class="keyf" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" d="M300 178V224H262c-26 0-58-4-72-22 14-18 46-22 72-22h38z"/>
+            <circle cx="216" cy="202" r="8" class="hole" stroke="currentColor" stroke-width="1.5"/>
+          </g>
+          <!-- vedrud (kokkusurutud lõppasendis) -->
+          <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+            <polyline id="sp0" points="0,0 7,4 -7,10 7,16 -7,22 7,28 -7,34 0,40" transform="translate(350,60) scale(1,1.2)"/>
+            <polyline id="sp1" points="0,0 7,4 -7,10 7,16 -7,22 7,28 -7,34 0,40" transform="translate(410,60) scale(1,1.35)"/>
+            <polyline id="sp2" points="0,0 7,4 -7,10 7,16 -7,22 7,28 -7,34 0,40" transform="translate(470,60) scale(1,1.15)"/>
+            <polyline id="sp3" points="0,0 7,4 -7,10 7,16 -7,22 7,28 -7,34 0,40" transform="translate(530,60) scale(1,1.3)"/>
+            <polyline id="sp4" points="0,0 7,4 -7,10 7,16 -7,22 7,28 -7,34 0,40" transform="translate(590,60) scale(1,1.2)"/>
+          </g>
+          <!-- ülemised tihvtid (lõppasend: lõikejoone kohal) -->
+          <rect id="dp0" class="dpin" x="-9" y="0" width="18" height="40" rx="3" transform="translate(350,110)"/>
+          <rect id="dp1" class="dpin" x="-9" y="0" width="18" height="36" rx="3" transform="translate(410,114)"/>
+          <rect id="dp2" class="dpin" x="-9" y="0" width="18" height="44" rx="3" transform="translate(470,106)"/>
+          <rect id="dp3" class="dpin" x="-9" y="0" width="18" height="38" rx="3" transform="translate(530,112)"/>
+          <rect id="dp4" class="dpin" x="-9" y="0" width="18" height="42" rx="3" transform="translate(590,108)"/>
+          <!-- alumised tihvtid (lõppasend: serv lõikejoonel) -->
+          <path id="kp0" class="pin" d="M-9 0h18v36l-9 6-9-6z" transform="translate(350,150)"/>
+          <path id="kp1" class="pin" d="M-9 0h18v52l-9 6-9-6z" transform="translate(410,150)"/>
+          <path id="kp2" class="pin" d="M-9 0h18v28l-9 6-9-6z" transform="translate(470,150)"/>
+          <path id="kp3" class="pin" d="M-9 0h18v44l-9 6-9-6z" transform="translate(530,150)"/>
+          <path id="kp4" class="pin" d="M-9 0h18v34l-9 6-9-6z" transform="translate(590,150)"/>
+          <!-- lõikejoon -->
+          <line id="shear" x1="284" y1="150" x2="756" y2="150" stroke-width="2.5" stroke-linecap="round"/>
+          <text x="284" y="140" class="lbl lbl-sig">lõikejoon</text>
+          <!-- nukk ja riiv -->
+          <g id="cam" transform="translate(0,0)">
+            <path d="M740 190h22a15 15 0 0 1 0 30h-22z" class="plug-fill" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          </g>
+          <g id="bolt" transform="translate(0,0)">
+            <rect x="758" y="196" width="60" height="18" rx="3" class="pin"/>
+          </g>
+          <text x="768" y="186" class="lbl">riiv</text>
+          <!-- mõõtjooned -->
+          <g fill="none" stroke="currentColor" stroke-width="1" opacity=".55">
+            <path d="M300 276v14M740 276v14M300 283h440"/>
+            <path d="M300 283l8-3v6zM740 283l-8-3v6z" fill="currentColor" stroke="none"/>
+          </g>
+          <text x="650" y="30" class="lbl">korpus</text>
+          <text x="650" y="248" class="lbl">südamik</text>
+        </svg>
+      </div>
+
+      <div class="doorbox">
+        <div class="door" id="door" aria-hidden="true"><span class="handle"></span><span class="cyl"></span><span class="plate">teie uks</span></div>
+        <div class="opened" id="opened">
+          <p class="kicker" style="margin:0">Uks lahti</p>
+          <h3>Helista, kui uks ei avane</h3>
+          <a class="call" href="tel:+3725072795"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span>507 2795</span></a>
+          <div class="row">
+            <span>Tartu · Lõuna-Eesti · 24h</span>
+            <a href="mailto:tuluph@gmail.com">tuluph@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= teenused ======= -->
+<section class="services" id="teenused" aria-labelledby="servH">
+  <div class="wrap">
+    <p class="kicker">Mida teeme</p>
+    <h2 class="h2" id="servH">Neli suunda, sama number</h2>
+    <ol class="list">
+      <li><span class="n">01</span><div class="body"><h3><svg class="ico" aria-hidden="true"><use href="#i-house"/></svg>Kodu ja kontor</h3><p>Lukkude avamine, kui võti on kadunud või jäänud ukse taha. Lukkude vahetus ja paigaldus korteritele, majadele ja kontoritele.</p></div></li>
+      <li><span class="n">02</span><div class="body"><h3><svg class="ico" aria-hidden="true"><use href="#i-car"/></svg>Auto</h3><p>Autouste ja autolukkude avamine, kui võti jäi autosse või läks kaduma.</p></div></li>
+      <li><span class="n">03</span><div class="body"><h3><svg class="ico" aria-hidden="true"><use href="#i-key"/></svg>Lukkude paigaldus ja võtmed</h3><p>Lukkude paigaldus ja vahetus, võtmete valmistamine. Lukkude müük ja hulgimüük poes Eedeni keskuses.</p></div></li>
+      <li><span class="n">04</span><div class="body"><h3><svg class="ico" aria-hidden="true"><use href="#i-keypad"/></svg>Koodlukud ja fonolukud</h3><p>Koodlukud ja fonolukusüsteemid kortermajadele, trepikodadele ja kontoritele — paigaldus ja vahetus.</p></div></li>
+    </ol>
+    <div class="list-foot">
+      <a class="btn" href="tel:+3725072795"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Helista 507 2795</a>
+      <span>Ööpäev läbi, ka pühade ajal.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ======= kuidas käib ======= -->
+<section class="steps" id="kuidas" aria-labelledby="stepsH">
+  <div class="wrap">
+    <p class="kicker">Kuidas lukuabi käib</p>
+    <h2 class="h2" id="stepsH">Kolm sammu</h2>
+    <ol>
+      <li><h3>Helista 507 2795</h3><p>Ööpäev läbi, ka nädalavahetusel ja pühade ajal. Sama number päeval ja öösel.</p></li>
+      <li><h3>Ütle, kus sa oled</h3><p>Aadress ja mis uks või lukk: korter, maja, kontor või auto.</p></li>
+      <li><h3>Tuleme kohale</h3><p>Avame ukse või vahetame luku. Vajadusel valmistame uued võtmed.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======= pood ======= -->
+<section class="shop" id="pood" aria-labelledby="shopH">
+  <div class="wrap">
+    <div class="shop-card">
+      <div>
+        <p class="kicker">Pood</p>
+        <h2 id="shopH">Pood Eedeni keskuses</h2>
+        <p style="margin-top:10px">Võtmete valmistamine, lukud ja lukkude hulgimüük. Lukuabi ei sõltu poe lahtiolekuaegadest — 24h number on sama.</p>
+      </div>
+      <div style="display:grid;gap:14px">
+        <p class="addr">Kalda tee 1c, Tartu<br>Eedeni keskus, 1. korrus</p>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kalda+tee+1c%2C+Tartu" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Ava kaardil<svg class="ico" aria-hidden="true" style="width:18px;height:18px"><use href="#i-ext"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= kontakt ======= -->
+<section class="contact" id="kontakt" aria-labelledby="contH">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="kicker">Kontakt</p>
+      <h2 class="h2" id="contH">Üks number ööpäev läbi</h2>
+      <p style="margin:18px 0 0"><a class="big" href="tel:+3725072795"><small>+372</small>507 2795</a></p>
+    </div>
+    <dl>
+      <dt>E-post</dt><dd><a href="mailto:tuluph@gmail.com">tuluph@gmail.com</a></dd>
+      <dt>Pood</dt><dd>Kalda tee 1c, Tartu (Eedeni keskus)</dd>
+      <dt>Piirkond</dt><dd>Tartu ja kogu Lõuna-Eesti</dd>
+      <dt>Ettevõte</dt><dd>TULU PH OÜ, registrikood 10149507</dd>
+    </dl>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span><b>TULU PH OÜ</b> · Tartu luku- ja võtmemeister</span>
+    <span>Kontseptsioon — mitteametlik koduleht</span>
+  </div>
+</footer>
+
+<aside class="callbar" id="callbar" aria-label="Kiire helistamine">
+  <a href="tel:+3725072795"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Helista 507 2795</a>
+</aside>
+
+<script src="ui.js"></script>
+<script src="vendor/gsap.min.js" defer></script>
+<script src="vendor/ScrollTrigger.min.js" defer></script>
+<script src="main.js" defer></script>
+</body>
+</html>
